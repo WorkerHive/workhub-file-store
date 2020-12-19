@@ -18,14 +18,18 @@ const FileStore = async (config = {}) => {
     if(config.swarmKey) swarmKey = decode(config.swarmKey);
     if(!config.swarmKey) generate(swarmKey);
 
+    let swarmAddrs = [
+        `/dns4/${host}/tcp/6969/ws/p2p-webrtc-star`,
+        `/ip4/0.0.0.0/tcp/${port}`
+    ]
+
+    console.log(swarmAddrs)
+
     let node = await IPFS.create({
         repo: config.repo || 'workhub',
         config: {
             Addresses: {
-                Swarm: [
-                    `/dns4/${host}/tcp/6969/ws/p2p-webrtc-star`,
-                    `/ip4/0.0.0.0/tcp/${port}`
-                ]
+                Swarm: swarmAddrs
             }
         },
         libp2p: P2P(swarmKey)
