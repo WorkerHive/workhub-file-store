@@ -1,0 +1,19 @@
+{
+  "name": "workhub-file-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ipfs": "^0.52.3",
+    "libp2p": "^0.30.0",
+    "libp2p-mdns": "^0.15.0",
+    "uint8-to-base64": "^0.2.0",
+    "wrtc": "^0.4.6"
+  }
+}
