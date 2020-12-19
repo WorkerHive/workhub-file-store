@@ -51,7 +51,7 @@ const FileStore = async (config = {}) => {
       //        node.swarm.connect(`/dns4/${host}/tcp/6969/ws/p2p-webrtc-star/p2p/${p.id}`)
     })
 
-    node.lip2p.on('peer:connect', (peer) => {
+    node.libp2p.on('peer:connect', (peer) => {
       console.log('Connected to peer')
     })
 
