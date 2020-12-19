@@ -59,4 +59,3 @@ const FileStore = async (config = {}) => {
 
 export default FileStore
 
-FileStore({host:'thetechcompany.workhub.services'})
