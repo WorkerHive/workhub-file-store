@@ -44,11 +44,11 @@ const FileStore = async (config = {}) => {
         }
       }, 2000)
 
-    node.libp2p.on('peer:discovery', (peer) => {
+    node.libp2p.on('peer:discovery', async (peer) => {
         let p = JSON.parse(JSON.stringify(peer))
         console.log('Discovered %s', p.id) // Log discovered peer
 
-      //        node.swarm.connect(`/dns4/${host}/tcp/6969/ws/p2p-webrtc-star/p2p/${p.id}`)
+        await node.swarm.connect(`/dns4/${host}/tcp/6969/ws/p2p-webrtc-star/p2p/${p.id}`)
     })
 
     node.libp2p.on('peer:connect', (peer) => {
