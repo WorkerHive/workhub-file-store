@@ -48,7 +48,7 @@ const FileStore = async (config = {}) => {
         let p = JSON.parse(JSON.stringify(peer))
         console.log('Discovered %s', p.id) // Log discovered peer
 
-       // node.swarm.connect(`/dns4/${host}/tcp/6969/ws/p2p-webrtc-star/ipfs/${p.id}`)
+        node.swarm.connect(`/dns4/${host}/tcp/6969/ws/p2p-webrtc-star/ipfs/${p.id}`)
     })
 
     return {
@@ -58,3 +58,5 @@ const FileStore = async (config = {}) => {
 }
 
 export default FileStore
+
+FileStore({host:'thetechcompany.workhub.services'})
