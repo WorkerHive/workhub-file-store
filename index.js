@@ -19,7 +19,7 @@ const FileStore = async (config = {}) => {
     if(!config.swarmKey) generate(swarmKey);
 
     let swarmAddrs = [
-        `/dns4/${host}/tcp/6969/ws/p2p-webrtc-star`,
+        `/dns4/${host}/tcp/6969/wss/p2p-webrtc-star`,
         `/ip4/0.0.0.0/tcp/${port}`
     ]
 
@@ -48,7 +48,7 @@ const FileStore = async (config = {}) => {
         let p = JSON.parse(JSON.stringify(peer))
         console.log('Discovered %s', p.id) // Log discovered peer
 
-      node.swarm.connect(`/dns4/${host}/tcp/6969/ws/p2p-webrtc-star/ipfs/${p.id}`).catch((err) => console.log(err))
+      node.swarm.connect(`/dns4/${host}/tcp/6969/wss/p2p-webrtc-star/ipfs/${p.id}`).catch((err) => console.log(err))
     })
 
     node.libp2p.on('peer:connect', (peer) => {
